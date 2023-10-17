@@ -24,14 +24,6 @@
       "API Key": []
     }
   ],
-  "consumes": [
-        "application/json",
-        "multipart/form-data"
-    ],
-    "produces": [
-        "application/json",
-        "application/xml"
-    ],
   "paths": {
     "/user-authentication": {
       "post": {
