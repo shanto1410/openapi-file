@@ -69,16 +69,6 @@
             "API Key": []
           }]
       },
-      "parameters": [ {
-          "$ref": "#/components/parameters/username"
-        },
-        {
-          "$ref": "#/components/parameters/password"
-        },
-        {
-          "$ref": "#/components/parameters/dataSource"
-        }
-        ]
     }
   },
   "components": {
