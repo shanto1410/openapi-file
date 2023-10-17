@@ -56,8 +56,16 @@
             "$ref": "#/components/responses/NotFound"
           }
         },
-        "operationId": "get-users",
-        "description": "Get a user by ID\n\n*Markdown is supported in descriptions. Add information here for users to get accustomed to endpoints*",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        
         "security": []
       },
       "parameters": []
