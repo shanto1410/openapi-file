@@ -34,13 +34,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "User Authentication Access Token",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
+                  "type": "object",
                   "items": {
-                    "$ref": "#/components/schemas/User"
+                    "$ref": "#/components/responses/UserAthenticationSuccess"
                   }
                 }
               }
