@@ -138,7 +138,7 @@
         }
       },
       "UserAuthenticationResponse": {
-        "description": "User Authentication Token Returned",
+        "description": "User asdfsdf asdfasdf Authentication Token Returned",
         "content": {
           "application/json": {
             "schema": {
