@@ -41,18 +41,7 @@
         ],
         "responses": {
                   "200": {
-                        "description": "User Authentication Token Returned",
-                        "schema": {
-              "properties": {
-                "status": {
-                  "type": "string",
-                  "description": "A code."
-                },
-                "error": {
-                  "type": "string"
-                }
-              },
-                        }
+                      "$ref": "#/components/responses/UserAuthenticationResponse"
                     },
 
           "400": {
@@ -148,6 +137,23 @@
           }
         }
       },
+      "UserAuthenticationResponse": {
+        "description": "User Authentication Token Returned",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "message"
+              ]
+            }
+          }
+        },
       "Unauthorized": {
         "description": "Action not allowed",
         "content": {
