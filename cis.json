@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GDIC API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "GDIC IT",
+      "email": "itdev@green-delta.com",
+      "url": "https://green-delta.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://cisdev.green-delta.com:8282",
+      "description": "Production"
+    },
+    {
+      "description": "Sandbox",
+      "url": "https://cisdev.green-delta.com:8282"
+    }
+  ],
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "User Authentication",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/responses/UserAthenticationSuccess"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "security": [{
+            "API Key": []
+          }]
+      },
+      "parameters": [ {
+          "$ref": "#/components/parameters/username"
+        },
+        {
+          "$ref": "#/components/parameters/password"
+        },
+        {
+          "$ref": "#/components/parameters/dataSource"
+        }
+        ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "description": "",
+        "type": "object",
+        "title": "User",
+        "properties": {
+          "username": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Please enter email or pf"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Please enter password"
+          },
+          "dataSource": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Request platform identify"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "API Key": {
+        "name": "JWT Access Token",
+        "type": "JWT Access Token",
+        "in": "query",
+        "description": "Authentication Bearer {{ACCESS TOKEN}}"
+      }
+    },
+    "parameters": {
+      "username": {
+        "name": "username",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Please enter email or pf"
+      },
+      "password": {
+        "name": "password",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Please enter password"
+      },
+      "dataSource": {
+        "name": "dataSource",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Please enter password"
+      }
+    },
+    "responses": {
+      "UserAthenticationSuccess": {
+        "description": "User Authentication Success Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "Success",
+              "type": "object",
+              "description": "",
+              "x-tags": [
+                "Common"
+              ],
+              "properties": {
+                  {
+                    "data": {
+                      "result": "boolean",
+                      "token": "string",
+                      "expiredDate": "string",
+                      "model": [],
+                      "remarks": [],
+                    },
+                    "messageID": "string",
+                    "correlationID": "string",
+                    "message": [],
+                    "responseCode": "string",
+                    "timestamp": "string"
+                  },
+              },
+              "required": [
+                        "result",
+                        "token"
+                      ]
+                    }
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "Error",
+              "type": "object",
+              "description": "A standard error object.",
+              "x-tags": [
+                "Common"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "A code."
+                },
+                "error": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "error"
+              ]
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Action not allowed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "message"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "user": {
+        "value": {
+          "username": 1726,
+          "password": "abcd1234",
+          "dataSource": "core"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Users"
+    }
+  ]
+}
