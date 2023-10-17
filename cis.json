@@ -111,7 +111,11 @@
                 "Common"
               ],
               "properties": {
-                "result": {
+                  "data": {
+                                    "type": "object",
+                                    "items": {
+                                        "properties": {
+                                            "result": {
                                                 "type": "boolean",
                                                 "description": "Result could be 'true' or 'false' "
                                             },
@@ -132,6 +136,30 @@
                                                 "type": "string",
                                                 "description": "Multiple remarks with comma seperator"
                                             }
+                                        }
+                                    }
+                                },
+                                "messageID": {
+                                    "type": "string",
+                                    "description": "Unique id for every response"
+                                },
+                                "correlationID": {
+                                    "type": "string",
+                                    "description": "Unique id for asynchronous response"
+                                },
+                                "message": {
+                                    "type": "array",
+                                    "description": "Multiple messages with comma seperator"
+                                },
+                                 "responseCode": {
+                                    "type": "string",
+                                    "description": "Status code"
+                                },
+                                "timestamp": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "response date time"
+                                }
               },
               "required": [
                 "result",
