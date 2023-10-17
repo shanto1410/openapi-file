@@ -114,7 +114,7 @@
         "description": "User Authentication Success Response",
         "content": {
           "application/json": {
-            "schema":  {
+        
                   "data": {
                       "result": "boolean",
                       "token": "string",
