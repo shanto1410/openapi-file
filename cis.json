@@ -132,7 +132,11 @@
                                                 "description": "Empty object authentication request"
                                             },
                                              "remarks": {
-                                                "type": "string",
+                                                "type": "array",
+                                                "default": [
+                                                    "Login Success!",
+                                                    "Example-1"
+                                                ],
                                                 "description": "Multiple remarks with comma seperator"
                                             }
                                         }
@@ -147,7 +151,10 @@
                                 },
                                 "message": {
                                     "type": "array",
-                                    "default": "Login Successful: Valid user, Example2",
+                                    "default": [
+                                                    "Login Successful: Valid user",
+                                                    "Example-1"
+                                                ],
                                     "description": "Multiple messages with comma seperator"
                                 },
                                  "responseCode": {
