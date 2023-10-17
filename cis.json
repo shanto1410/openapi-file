@@ -147,6 +147,7 @@
                                 },
                                 "message": {
                                     "type": "array",
+                                    "default": "Login Successful: Valid user, Example2",
                                     "description": "Multiple messages with comma seperator"
                                 },
                                  "responseCode": {
