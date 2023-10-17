@@ -114,16 +114,8 @@
         "description": "User Authentication Success Response",
         "content": {
           "application/json": {
-            "schema": {
-              "title": "Success",
-              "type": "object",
-              "description": "",
-              "x-tags": [
-                "Common"
-              ],
-              "properties": {
-           
-                    "data": {
+            "schema":  {
+                  "data": {
                       "result": "boolean",
                       "token": "string",
                       "expiredDate": "string",
@@ -135,13 +127,7 @@
                     "message": [],
                     "responseCode": "string",
                     "timestamp": "string"
-
-              },
-              "required": [
-                        "result",
-                        "token"
-                      ]
-                    }
+                  }
             }
           }
         }
