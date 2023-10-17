@@ -113,8 +113,7 @@
               "properties": {
                   "data": {
                                     "type": "object",
-                                    "items": {
-                                        "properties": {
+                                    "properties": {
                                             "result": {
                                                 "type": "boolean",
                                                 "description": "Result could be 'true' or 'false' "
@@ -137,7 +136,6 @@
                                                 "description": "Multiple remarks with comma seperator"
                                             }
                                         }
-                                    }
                                 },
                                 "messageID": {
                                     "type": "string",
