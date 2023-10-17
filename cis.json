@@ -111,17 +111,31 @@
                 "Common"
               ],
               "properties": {
-                "status": {
-                  "type": "string",
-                  "description": "A code."
-                },
-                "error": {
-                  "type": "string"
-                }
+                "result": {
+                                                "type": "boolean",
+                                                "description": "Result could be 'true' or 'false' "
+                                            },
+                                            "token": {
+                                                "type": "string",
+                                                "description": "JWT Access Token"
+                                            },
+                                             "expiredDate": {
+                                                "type": "string",
+                                                "format": "date-time",
+                                                "description": "Token expire date"
+                                            },
+                                             "model": {
+                                                "type": "array",
+                                                "description": "Empty object authentication request"
+                                            },
+                                             "remarks": {
+                                                "type": "string",
+                                                "description": "Multiple remarks with comma seperator"
+                                            }
               },
               "required": [
-                "status",
-                "error"
+                "result",
+                "token"
               ]
             }
           }
