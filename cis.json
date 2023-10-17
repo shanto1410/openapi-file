@@ -34,17 +34,7 @@
         ],
         "responses": {
           "200": {
-            "description": "User Authentication Access Token",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "items": {
-                    "$ref": "#/components/responses/UserAthenticationSuccess"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/UserAthenticationSuccess"
           },
           "400": {
             "$ref": "#/components/responses/Unauthorized"
