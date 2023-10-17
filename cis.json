@@ -118,35 +118,7 @@
         "description": "Authentication Bearer {{ACCESS TOKEN}}"
       }
     },
-    "parameters": {
-      "username": {
-        "name": "username",
-        "in": "query",
-        "required": true,
-        "schema": {
-          "type": "string"
-        },
-        "description": "Please enter email or pf"
-      },
-      "password": {
-        "name": "password",
-        "in": "query",
-        "required": true,
-        "schema": {
-          "type": "string"
-        },
-        "description": "Please enter password"
-      },
-      "dataSource": {
-        "name": "dataSource",
-        "in": "query",
-        "required": false,
-        "schema": {
-          "type": "string"
-        },
-        "description": "Please enter password"
-      }
-    },
+
     "responses": {
       "UserAthenticationSuccess": {
         "description": "User Authentication Success Response",
@@ -160,7 +132,7 @@
                 "Common"
               ],
               "properties": {
-                  {
+           
                     "data": {
                       "result": "boolean",
                       "token": "string",
@@ -173,7 +145,7 @@
                     "message": [],
                     "responseCode": "string",
                     "timestamp": "string"
-                  },
+
               },
               "required": [
                         "result",
