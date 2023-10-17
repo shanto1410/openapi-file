@@ -114,20 +114,35 @@
         "description": "User Authentication Success Response",
         "content": {
           "application/json": {
-        
-                  "data": {
-                      "result": "boolean",
-                      "token": "string",
-                      "expiredDate": "string",
-                      "model": [],
-                      "remarks": [],
-                    },
-                    "messageID": "string",
-                    "correlationID": "string",
-                    "message": [],
-                    "responseCode": "string",
-                    "timestamp": "string"
-                  }
+          "description": "Account object returned",
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Account ID"
+                                },
+                                "owner_id": {
+                                    "type": "string",
+                                    "description": "Account Owner ID"
+                                },
+                                "owner_email": {
+                                    "type": "string",
+                                    "description": "Account Owner email"
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Account creation date/time"
+                                },
+                                "options": {
+                                    "$ref": "#/definitions/AccountOptions"
+                                },
+                                "vanity_url": {
+                                    "type": "string",
+                                    "description": "Account Vanity URL"
+                                }
+                            }
+                        }
             }
           }
         }
